@@ -17,6 +17,7 @@ public class Level {
     private List<Item> items;
     private boolean win;
     private char[][] grid;
+    private static int completedTimes =0;
 
     public Level() {
         this.enemies = new ArrayList<>();
@@ -35,7 +36,17 @@ public class Level {
         this.grid = new char[20][20];
     }
 
-    public void outLevel() { // Вывод информации об уровне
+    public Level(Level level) {
+		this.name= level.name;
+		this.player=level.player;
+		this.enemies=level.enemies;
+		this.platforms = level.platforms;
+		this.items=level.items;
+		this.win=false;
+		this.grid = new char[20][20];
+	}
+
+	public void outLevel() { // Вывод информации об уровне
         System.out.println("Информация об уровне:");
         System.out.printf("  Название: %s\n", name);
         this.player.outPlayer();
@@ -75,6 +86,7 @@ public class Level {
                     break;
                 case 1:
                     System.out.println("Вы победили!");
+                    completedTimes++;
                     this.win = true;
                     break;
             }
@@ -163,6 +175,7 @@ public class Level {
             System.out.print("Добавить ещё платформ? 0 = нет, 1 = да: ");
             choice = scanner.nextInt();
         }
+        scanner.close();
     }
     public void renderGrid() { // Отрисовка сетки
         char[][] playGrid = new char[20][20];
@@ -262,6 +275,9 @@ public class Level {
                 break;
         }
         return 0; // Возвращаем 0, если движение не было выполнено
+    }
+    public static int getCompletedTimes() {
+    	return completedTimes;
     }
 }
 

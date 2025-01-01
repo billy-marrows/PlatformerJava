@@ -37,7 +37,6 @@ public class Position {
         System.out.print("Введите координаты: ");
         Scanner scanner = new Scanner(System.in);
         boolean flag = false;
-
         while (!flag) {
             if (scanner.hasNextInt()) {
                 this.x = scanner.nextInt();
@@ -46,7 +45,7 @@ public class Position {
                     if (this.x >= 0 && this.x < 19 && this.y >= 0 && this.y < 20) {
                         flag = true;
                     } else {
-                        System.out.println("Ошибка ввода. Координаты должны быть в пределах.");
+                        System.out.println("Ошибка ввода. Координаты должны быть в пределах 20 (0-19).");
                     }
                 } else {
                     System.out.println("Ошибка ввода.");
@@ -57,5 +56,6 @@ public class Position {
                 scanner.next(); // очистка некорректного ввода
             }
         }
+        scanner.close();
     }
 }

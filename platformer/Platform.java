@@ -1,5 +1,4 @@
 package platformer;
-import java.util.Scanner;
 public class Platform {
     private Position position;
 

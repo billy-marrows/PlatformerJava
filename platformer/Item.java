@@ -39,6 +39,7 @@ public class Item {
             scanner.next(); // Очистка некорректного ввода
         }
         this.type = scanner.nextInt();
+        scanner.close();
     }
 }
 

@@ -45,5 +45,6 @@ public class Enemy {
         }
         this.health = scanner.nextInt();
         System.out.println("Новый враг готов!");
+        scanner.close();
     }
 }

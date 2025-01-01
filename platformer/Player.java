@@ -66,6 +66,7 @@ public class Player {
         }
         this.health = scanner.nextInt();
         System.out.println("Игрок готов!");
+        scanner.close();
     }
 }
 
