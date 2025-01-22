@@ -145,7 +145,6 @@ public class Level {
         this.player.writePlayer();
         System.out.print("Введите название уровня: ");
         this.name = scanner.nextLine();
-
         int choice = 1;
         System.out.println("Создание предметов:");
         while (choice != 0) {
