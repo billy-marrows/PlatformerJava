@@ -6,7 +6,10 @@ public class Position {
     private int y;
 
     public Position() {}
-
+    public Position(Position p) {
+    	this.x=p.x;
+    	this.y=p.y;
+    }
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
@@ -30,8 +33,8 @@ public class Position {
         this.y = y;
     }
 
-    public void outPos() {
-        System.out.printf("Позиция: %d %d  ", this.x, this.y);
+    public String outPos() {
+        return "Позиция: "+this.x+" "+this.y;
     }
 
     public void writePos() {

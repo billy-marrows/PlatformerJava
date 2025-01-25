@@ -1,4 +1,4 @@
-public class rand {                                   //вспомогательный класс
+public abstract class rand {                                   //вспомогательный класс
 	public static int rtwenty() {
 		return (int)(Math.random()*20);
 	}

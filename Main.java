@@ -20,9 +20,9 @@ public class Main {
 
             // Работа с массивом объектов
             Item[] arritems = new Item[]{
-                new Item(1, 3, 1),
-                new Item(4, 5, 0),
-                new Item(7, 8, 0)
+                new Win(1, 3),
+                new Item(4, 5),
+                new Item(7, 8)
             };
             List<Item> items = new ArrayList<>();
             for (Item item : arritems) {
@@ -48,7 +48,7 @@ public class Main {
             	items.clear();
             	do {
             		itemType=(int)rand.binrand();
-            		items.add(new Item(rand.rtwenty(),rand.rtwenty(),itemType));
+            		items.add(new Item(rand.rtwenty(),rand.rtwenty()));
             	}while (itemType!=1);
             	levels[i/5][i%5]=new Level(name,player,enemies,platforms,items);  
             }
@@ -65,6 +65,7 @@ public class Main {
                 		levelnumber=scanner.nextInt();
                 	}while((levelnumber<1)||(levelnumber>25));
             		level=levels[(levelnumber-1)/5][(levelnumber-1)%5];
+            		level.getItems().sort(null);
                     if (level.getPlayer().getHealth() == 0) {
                         level.getPlayer().addHealth(1);
                     }

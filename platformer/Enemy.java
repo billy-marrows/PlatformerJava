@@ -1,7 +1,7 @@
 package platformer;
 import java.util.Scanner;
 
-public class Enemy {
+public class Enemy implements Cloneable{
     private Position position;
     private int health;
 
@@ -46,5 +46,8 @@ public class Enemy {
         this.health = scanner.nextInt();
         System.out.println("Новый враг готов!");
         scanner.close();
+    }
+    public Enemy clone() throws CloneNotSupportedException {
+        return (Enemy) super.clone();
     }
 }

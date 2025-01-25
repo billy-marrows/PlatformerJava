@@ -49,7 +49,7 @@ public class Level {
 	public void outLevel() { // Вывод информации об уровне
         System.out.println("Информация об уровне:");
         System.out.printf("  Название: %s\n", name);
-        this.player.outPlayer();
+        System.out.println(this.player.ToString());
         for (Enemy enemy : this.enemies) {
             System.out.print("  ");
             enemy.outEnemy();

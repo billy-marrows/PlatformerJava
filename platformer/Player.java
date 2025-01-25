@@ -27,10 +27,11 @@ public class Player {
         return this.health;
     }
 
-    public void outPlayer() { // Вывод информации об игроке
+    public String ToString() { // Вывод информации об игроке
         System.out.print("Информация об игроке:   ");
         this.position.outPos();
         System.out.printf("Здоровье: %d  ", this.health);
+        return "Информация об игроке:   " + this.position.outPos()+"Здоровье: "+ this.health;
     }
 
     public void addHealth(int d) {
